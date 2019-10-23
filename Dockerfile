@@ -13,6 +13,7 @@ RUN echo "*** updating system ***" \
     && add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/$(. /etc/os-release; echo "$ID") $(lsb_release -cs) stable" \
     && apt-get update && apt-get -y install docker-ce \
     && groupadd -g ${DOCKERGID} docker && usermod -a -G docker jenkins \
+    && curl https://raw.githubusercontent.com/docker/docker-ce/master/components/cli/contrib/completion/bash/docker -o /etc/bash_completion.d/docker \
     && echo "*** cleanup ***" \
     && apt-get clean && rm -rf /var/lib/apt/lists/* /var/cache/apt/* /tmp/* /var/tmp/*
 
