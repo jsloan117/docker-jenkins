@@ -28,9 +28,8 @@ docker run -d --name jenkins \
 jsloan117/jenkins
 ```
 
-# login to container as root user
-
 ```bash
+# login as root user
 docker exec -it -u root  jenkins bash
 ```
 
