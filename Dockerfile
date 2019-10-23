@@ -5,6 +5,8 @@ LABEL maintainer="Jonathan Sloan"
 ENV DEBIAN_FRONTEND=noninteractive
 ARG DOCKERGID=983
 
+USER root
+
 RUN echo "*** updating system ***" \
     && apt-get update && apt-get -y upgrade \
     && echo "*** installing packages ***" \

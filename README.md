@@ -28,6 +28,12 @@ docker run -d --name jenkins \
 jsloan117/jenkins
 ```
 
+# login to container as root user
+
+```bash
+docker exec -it -u root  jenkins bash
+```
+
 ### Environment options
 
 | Variable | Function | Example |
