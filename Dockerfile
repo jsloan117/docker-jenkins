@@ -17,6 +17,6 @@ RUN echo "*** updating system ***" \
     && groupmod -g ${DOCKERGID} docker && usermod -a -G docker jenkins \
     && curl https://raw.githubusercontent.com/docker/docker-ce/master/components/cli/contrib/completion/bash/docker -o /etc/bash_completion.d/docker \
     && echo "*** cleanup ***" \
-    && apt-get clean && rm -rf /var/lib/apt/lists/* /var/cache/apt/* /tmp/* /var/tmp/*
+    && apt-get autoclean && rm -rf /var/lib/apt/lists/* /var/cache/apt/* /tmp/* /var/tmp/*
 
 USER jenkins

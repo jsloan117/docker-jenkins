@@ -14,7 +14,7 @@ docker run -d --name jenkins \
 -v /var/run/docker.sock:/var/run/docker.sock \
 -v /etc/localtime:/etc/localtime:ro \
 -v /etc/resolv.conf:/etc/resolv.conf:ro \
--e JAVA_OPTS=-Xmx512M \
+-e JAVA_OPTS=-Xms256M -Xmx1G -Dorg.apache.commons.jelly.tags.fmt.timeZone=America/Chicago \
 -p 8080:8080 -p 50000:50000 \
 jsloan117/jenkins
 ```
@@ -23,18 +23,18 @@ jsloan117/jenkins
 docker run -d --name jenkins \
 -v /var/run/docker.sock:/var/run/docker.sock \
 -v /etc/localtime:/etc/localtime:ro \
--e JAVA_OPTS=-Xmx512M \
+-e JAVA_OPTS=-Xms256M -Xmx1G -Dorg.apache.commons.jelly.tags.fmt.timeZone=America/Chicago \
 -p 8080:8080 -p 50000:50000 --dns 1.1.1.1 --dns 1.0.0.1 \
 jsloan117/jenkins
 ```
 
 ```bash
 # login as root user
-docker exec -it -u root  jenkins bash
+docker exec -it -u root jenkins bash
 ```
 
 ### Environment options
 
 | Variable | Function | Example |
 |----------|----------|-------|
-| `JAVA_OPTS` | set java options (default limit ram usage to 512M)| `JAVA_OPTS=-Xmx512M` |
+| `JAVA_OPTS` | set java options (default limit ram usage to 256M-1G, set timezone)| `JAVA_OPTS=-Xms256M -Xmx1G -Dorg.apache.commons.jelly.tags.fmt.timeZone=America/Chicago` |
