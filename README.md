@@ -1,40 +1,16 @@
 # docker-jenkins
 
-Docker jenkins
+Container based on [jenkins:lts](https://hub.docker.com/r/jenkins/jenkins), and includes the following: docker-ce, docker-compose including bash-completion scripts. Please see [Run from Docker registry](http://jsloan117.github.io/docker-jenkins/run-from-docker-registry) for more details and commands.
 
-Container that is based on [jenkins:lts](https://hub.docker.com/r/jenkins/jenkins).
-
-## Run container from Docker registry
-
-The container is available from the Docker registry and this is the simplest way to get it.
-To run the container use this command:
+## Quick Start
 
 ```bash
 docker run -d --name jenkins \
 -v /var/run/docker.sock:/var/run/docker.sock \
--v /etc/localtime:/etc/localtime:ro \
--v /etc/resolv.conf:/etc/resolv.conf:ro \
--e JAVA_OPTS=-Xms256M -Xmx1G -Dorg.apache.commons.jelly.tags.fmt.timeZone=America/Chicago \
 -p 8080:8080 -p 50000:50000 \
 jsloan117/jenkins
 ```
 
-```bash
-docker run -d --name jenkins \
--v /var/run/docker.sock:/var/run/docker.sock \
--v /etc/localtime:/etc/localtime:ro \
--e JAVA_OPTS=-Xms256M -Xmx1G -Dorg.apache.commons.jelly.tags.fmt.timeZone=America/Chicago \
--p 8080:8080 -p 50000:50000 --dns 1.1.1.1 --dns 1.0.0.1 \
-jsloan117/jenkins
-```
+## Documentation
 
-```bash
-# login as root user
-docker exec -it -u root jenkins bash
-```
-
-### Environment options
-
-| Variable | Function | Example |
-|----------|----------|-------|
-| `JAVA_OPTS` | set java options (default limit ram usage to 256M-1G, set timezone)| `JAVA_OPTS=-Xms256M -Xmx1G -Dorg.apache.commons.jelly.tags.fmt.timeZone=America/Chicago` |
+The full documentation is available [here](http://jsloan117.github.io/docker-jenkins).

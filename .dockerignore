@@ -1,1 +1,8 @@
+.*
+.cache
 .git
+Jenkinsfile
+# mkdocs
+docs/
+mkdocs.yml
+site/
