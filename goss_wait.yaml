@@ -1,9 +1,3 @@
-file:
-  /goss/docker_output.log:
-    exists: true
-    contains:
-      - "Jenkins is fully up and running"
-http:
-  http://127.0.0.1:8080:
-    status: 200
-    timeout: 3000
+port:
+  tcp:8080:
+    listening: true
