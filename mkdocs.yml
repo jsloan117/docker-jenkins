@@ -1,14 +1,14 @@
-site_name:  docker-jenkins
+site_name: docker-jenkins
 site_url: http://jsloan117.github.io/docker-jenkins
 repo_url: https://github.com/jsloan117/docker-jenkins
 theme:
-  name: 'material'
+  name: "material"
 markdown_extensions:
   - toc:
-      permalink: True
+      permalink: true
       separator: "_"
 nav:
-  - 'Home': 'index.md'
-  - 'Run from Docker registry': 'run-from-docker-registry.md'
+  - "Home": "index.md"
+  - "Run from Docker registry": "run-from-docker-registry.md"
 plugins:
   - search

@@ -1,8 +1,20 @@
-.*
-.cache
-.git
-Jenkinsfile
-# mkdocs
+*.aes
+.cache/
 docs/
+.dockerignore
+*.enc
+.git/
+.gitignore
+goss.yaml
+goss_wait.yaml
+.hadolint.yaml
+*.md
 mkdocs.yml
+.prettierrc
 site/
+Jenkinsfile
+.travis/
+.travis.yml
+.trivyignore
+.yamllint
+.ssh

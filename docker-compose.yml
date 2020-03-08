@@ -1,10 +1,10 @@
-version:  "3.7"
+version: "3.7"
 
 services:
   jenkins:
-    image:  jsloan117/jenkins:latest
+    image: jsloan117/jenkins:latest
     container_name: jenkins
-    restart:  always
+    restart: always
     environment:
       - JAVA_OPTS=-Xms256M -Xmx1G -Dorg.apache.commons.jelly.tags.fmt.timeZone=America/Chicago
     volumes:
