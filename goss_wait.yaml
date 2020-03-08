@@ -1,3 +1,8 @@
+file:
+  /goss/docker_output.log:
+    exists: true
+    contains:
+      - "Jenkins is fully up and running"
 http:
   http://127.0.0.1:8080:
     status: 200

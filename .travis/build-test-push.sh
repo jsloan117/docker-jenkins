@@ -77,7 +77,7 @@ vulnerability_scanner () {
 test_images () {
   for IMAGE in $(docker image ls | tail -n+2 | awk '{OFS=":";} {print $1,$2}'| grep "${DOCKER_USER}"); do
     echo -e "\n<<< Testing ${IMAGE} image >>>\n"
-    dgoss run -p 8080:8080 -v /var/run/docker.sock:/var/run/docker.sock "${IMAGE}"
+    dgoss run -p 8080:8080 -v /var/run/docker.sock:/var/run/docker.sock "${IMAGE}" --httpListenAddress=127.0.0.1
   done
 }
 
