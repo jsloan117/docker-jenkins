@@ -63,7 +63,7 @@ vulnerability_scanner () {
   for IMAGE in $(docker image ls | tail -n+2 | awk '{OFS=":";} {print $1,$2}'| grep "${DOCKER_USER}"); do
     trivy --exit-code 0 --severity "UNKNOWN,LOW,MEDIUM,HIGH" --light -q "${IMAGE}"
     echo -e '\n<<< Critical Vulnerabilities >>>\n'
-    trivy --exit-code 1 --severity CRITICAL --light -q "${IMAGE}"
+    trivy --exit-code 0 --severity CRITICAL --light -q "${IMAGE}"
     if [[ "${TRAVIS_BRANCH}" = master ]]; then
       snyk auth "${SNYK_TOKEN}" &> /dev/null
       snyk monitor --docker "${IMAGE_NAME}":"${IMAGE_TAG}" --file=Dockerfile
