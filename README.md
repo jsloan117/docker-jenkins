@@ -4,7 +4,7 @@
 [![Build Status](https://travis-ci.com/jsloan117/docker-jenkins.svg?branch=master)](https://travis-ci.com/jsloan117/docker-jenkins)
 ![Docker Pulls](https://img.shields.io/docker/pulls/jsloan117/jenkins.svg)
 
-Container based on [jenkins:lts](https://hub.docker.com/r/jenkins/jenkins), and includes the following: docker-ce, docker-compose including bash-completion scripts. Please see [Run from Docker registry](http://jsloan117.github.io/docker-jenkins/run-from-docker-registry) for more details and commands.
+Image based on [jenkins:lts](https://hub.docker.com/r/jenkins/jenkins), and includes the following: docker-ce, docker-compose including bash-completion scripts. Please see [Run from Docker registry](http://jsloan117.github.io/docker-jenkins/run-from-docker-registry) for more details and commands.
 
 ## Quick Start
 
