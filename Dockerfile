@@ -1,5 +1,5 @@
 FROM jenkins/jenkins:lts
-LABEL Name=jenkins maintainer="Jonathan Sloan"
+LABEL Name=jenkins Maintainer="Jonathan Sloan"
 
 ENV DEBIAN_FRONTEND=noninteractive LC_ALL=C.UTF-8 LANG=C.UTF-8
 ARG DOCKERGID=983
@@ -21,6 +21,8 @@ RUN echo "*** installing packages ***" \
     && curl -s https://raw.githubusercontent.com/docker/docker-ce/master/components/cli/contrib/completion/bash/docker -o /etc/bash_completion.d/docker \
     && curl -s https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o /etc/bash_completion.d/git \
     && echo "*** cleanup ***" \
-    && rm -rf /var/lib/apt/lists/* /var/cache/apt/* /tmp/* /var/tmp/*
+    && rm -rf /tmp/* /var/tmp/* /var/cache/apt/* /var/lib/apt/lists/*
 
 USER jenkins
+
+COPY VERSION .
